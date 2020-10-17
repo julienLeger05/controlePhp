@@ -1,0 +1,21 @@
+<form method="post">
+    <?php if (isset($city)) { ?>
+        <label for="id"> id</label>
+        <input type="text" name="id" id="id" value="<?= isset($city) ? $city->id : '' ?>">
+    <?php } ?>
+    <label for="name"> name</label>
+    <input type="text" name="name" id="name" value="<?= isset($city) ? $city->name : '' ?>">
+    <select name="countryCode" id="countryCode">
+
+        <?php foreach ($countries as $country) { ?>
+
+            <option><?php echo $country->code ?></option>
+
+        <?php } ?>
+    </select>
+    <label for="district"> district</label>
+    <input type="text" name="district" id="district" value="<?= isset($city) ? $city->district : '' ?>">
+    <label for="population"> population</label>
+    <input type="number" name="population" id="population" value="<?= isset($city) ? $city->population : '' ?>">
+    <input type="submit" value="modifier">
+</form>

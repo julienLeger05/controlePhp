@@ -1,0 +1,21 @@
+<table id='example'>
+    <thead>
+        <?php foreach ($result[0] as $country => $value) { ?>
+
+            <th><?php echo $country ?></th>
+
+        <?php } ?>
+        <th>Modifier</th>
+    </thead>
+    <tbody>
+        <?php foreach ($result as $country) { ?>
+            <tr> <?php foreach ($country as $key => $value) { ?>
+
+                    <td><?php echo $country[$key]; ?></td>
+
+                <?php } ?>
+                <td> <a href="./editCountry.php?code=<?php echo $country['code'] ?>">Modifier ce pays</a></td>
+            </tr>
+        <?php } ?>
+    </tbody>
+</table>
