@@ -1,15 +1,20 @@
 <form method="post">
+
     <?php if (isset($city)) { ?>
+        <h1>Editer la ville : <?php echo $city->name ?> </h1>
         <label for="id"> id</label>
         <input type="text" name="id" id="id" value="<?= isset($city) ? $city->id : '' ?>">
+    <?php } else { ?>
+        <h1>Creer une nouvelle ville </h1>
     <?php } ?>
     <label for="name"> name</label>
     <input type="text" name="name" id="name" value="<?= isset($city) ? $city->name : '' ?>">
+    <label for="countryCode"> Code pays </label>
     <select name="countryCode" id="countryCode">
 
         <?php foreach ($countries as $country) { ?>
 
-            <option><?php echo $country->code ?></option>
+            <option value="<?php echo $country->code ?>"><?php echo $country->name ?></option>
 
         <?php } ?>
     </select>

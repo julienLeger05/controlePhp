@@ -7,6 +7,7 @@ if (isset($_POST['name'])) {
 
     $city = new City($_POST);
     $city->save();
+    header("Location:./read.php");
 }
 
 

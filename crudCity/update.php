@@ -9,5 +9,6 @@ if (isset($_POST['name'])) {
     $city->populate($_POST);
     //$user = new User($_POST);
     $city->save();
+    header("Location:./read.php");
 }
 require('../tpl/index.phtml');
